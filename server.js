@@ -10,6 +10,6 @@ app.use(cors());
 
 const PORT = process.env.PORT || 5000;
 
-app.get('/', (req, res) => res.send({ message: "Hello World"}))
+app.get('/', (req, res) => res.send({ message: 'Hello World' }));
 
 app.listen(PORT, () => console.log(`Listen on port ${PORT}`));
