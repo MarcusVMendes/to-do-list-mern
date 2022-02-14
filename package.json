@@ -12,6 +12,7 @@
   "author": "MarcusVMendes",
   "license": "MIT",
   "dependencies": {
+    "cors": "^2.8.5",
     "dotenv": "^16.0.0",
     "express": "^4.17.2",
     "nodemon": "^2.0.15"
