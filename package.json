@@ -1,0 +1,16 @@
+{
+  "name": "project_todolist_mern",
+  "version": "1.0.0",
+  "description": "to-do list project using stack mern",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "MarcusVMendes",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "express": "^4.17.2",
+    "nodemon": "^2.0.15"
+  }
+}
