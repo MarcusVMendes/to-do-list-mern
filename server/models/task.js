@@ -12,7 +12,14 @@ const createTaskModel = async (taskName, status, createdAt) => {
   return query;
 };
 
+const deleteTaskModel = async (id) => {
+  const conn = await connection();
+  const query = await conn.collection('Tasks').deleteOne({ where: { _id: id } });
+  return query;
+};
+
 module.exports = {
   getAllTasksModel,
   createTaskModel,
+  deleteTaskModel,
 };

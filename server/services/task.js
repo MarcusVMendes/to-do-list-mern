@@ -1,9 +1,12 @@
+const { ObjectId } = require('mongodb');
+const errorMessage = require('../utils/errorMessage');
+const { taskSchema } = require('../utils/joi');
+
 const {
   getAllTasksModel,
   createTaskModel,
+  deleteTaskModel,
 } = require('../models/task');
-const errorMessage = require('../utils/errorMessage');
-const { taskSchema } = require('../utils/joi');
 
 const getAllTasksService = async () => {
   const tasks = await getAllTasksModel();
@@ -18,7 +21,18 @@ const createTaskService = async (taskName, status, createdAt) => {
   return createdTask;
 };
 
+const deleteTaskService = async (id) => {
+  const idIsValid = ObjectId.isValid(id);
+  if (!idIsValid) throw errorMessage(202, 'Provid a valid id');
+  await deleteTaskModel(id);
+  return {
+    id,
+    message: 'Task deleted succefully',
+  };
+};
+
 module.exports = {
   getAllTasksService,
   createTaskService,
+  deleteTaskService,
 };
