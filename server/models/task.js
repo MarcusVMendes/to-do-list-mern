@@ -6,6 +6,13 @@ const getAllTasksModel = async () => {
   return query;
 };
 
+const createTaskModel = async (taskName, status, createdAt) => {
+  const conn = await connection();
+  const query = await conn.collection('Tasks').insertOne({ taskName, status, createdAt });
+  return query;
+};
+
 module.exports = {
   getAllTasksModel,
+  createTaskModel,
 };
