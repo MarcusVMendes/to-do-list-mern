@@ -1,3 +1,4 @@
+const { ObjectId } = require('mongodb');
 const connection = require('./connection');
 
 const getAllTasksModel = async () => {
@@ -14,14 +15,14 @@ const createTaskModel = async (taskName, status, createdAt) => {
 
 const deleteTaskModel = async (id) => {
   const conn = await connection();
-  const query = await conn.collection('Tasks').deleteOne({ where: { _id: id } });
+  const query = await conn.collection('Tasks').deleteOne({ _id: ObjectId(id) });
   return query;
 };
 
 const updateTaskModel = async (id, taskName, status) => {
   const conn = await connection();
   const query = await conn.collection('Tasks').updateOne(
-    { _id: id },
+    { _id: ObjectId(id) },
     { $set: { taskName, status } },
   );
   return query;
