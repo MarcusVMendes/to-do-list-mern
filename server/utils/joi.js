@@ -7,9 +7,6 @@ const taskSchema = Joi.object({
   status: Joi.string().required().messages({
     required: '"status" is required',
   }),
-  createdAt: Joi.string().required().messages({
-    required: '"taskName" is required',
-  }),
 });
 
 module.exports = {

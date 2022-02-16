@@ -18,8 +18,19 @@ const deleteTaskModel = async (id) => {
   return query;
 };
 
+const updateTaskModel = async (id, taskName, status) => {
+  console.log('model');
+  const conn = await connection();
+  const query = await conn.collection('Tasks').updateOne(
+    { _id: id },
+    { $set: { taskName, status } },
+  );
+  return query;
+};
+
 module.exports = {
   getAllTasksModel,
   createTaskModel,
   deleteTaskModel,
+  updateTaskModel,
 };

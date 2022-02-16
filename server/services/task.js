@@ -6,6 +6,7 @@ const {
   getAllTasksModel,
   createTaskModel,
   deleteTaskModel,
+  updateTaskModel,
 } = require('../models/task');
 
 const getAllTasksService = async () => {
@@ -31,8 +32,21 @@ const deleteTaskService = async (id) => {
   };
 };
 
+const updateTaskService = async (id, taskName, status) => {
+  const { error } = taskSchema.validate({ taskName, status });
+  if (error) throw errorMessage(202, error.message);
+  const idIsValid = ObjectId.isValid(id);
+  if (!idIsValid) throw errorMessage(202, 'Provid a valid id');
+  await updateTaskModel(id, taskName, status);
+  return {
+    id,
+    message: 'Task updated succefully',
+  };
+};
+
 module.exports = {
   getAllTasksService,
   createTaskService,
   deleteTaskService,
+  updateTaskService,
 };
