@@ -19,7 +19,6 @@ const deleteTaskModel = async (id) => {
 };
 
 const updateTaskModel = async (id, taskName, status) => {
-  console.log('model');
   const conn = await connection();
   const query = await conn.collection('Tasks').updateOne(
     { _id: id },
