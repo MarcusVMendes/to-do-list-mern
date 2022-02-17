@@ -54,5 +54,5 @@ Após cada um dos passos, haverá um exemplo do comando a ser digitado para faze
     - [2 - Inserir uma nova tarefa na lista](#2---inserir-uma-nova-tarefa-na-lista)
     - [3 - Remover uma tarefa da lista](#3---remover-uma-tarefa-da-lista)
     - [4 - Atualizar uma tarefa da lista](#4---atualizar-uma-tarefa-da-lista)
-    - [5 - A tarefa deve possuir um status editável: pendente, em andamento ou pronto](#5---a-tarefa-deve-possuir-um-status-editável:-pendente,-em-andamento-ou-pronto)
+    - [5 - A tarefa deve possuir um status editável](#5---a-tarefa-deve-possuir-um-status-editável)
     
